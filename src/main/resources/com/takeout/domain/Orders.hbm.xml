@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<hibernate-mapping package="com.takeout.domain">
+		<class name="Orders" table="orders">
+			<id name="orderId" type="java.lang.Long">
+				<generator class="identity" />
+			</id>
+			<property name="customerId" not-null="true" type="java.lang.Long" />
+			<property name="shopId" not-null="true" type="java.lang.Long" />
+		   <property name="mobile" not-null="true" type="java.lang.String" />
+			<property name="address" type="java.lang.String" />
+			<property name="createTime" not-null="true" type="java.sql.Timestamp" />
+			<property name="endTime" type="java.sql.Timestamp" />
+			<property name="total" type="java.math.BigDecimal" />
+			<property name="status" not-null="true" type="java.lang.Byte" />
+			<property name="notes" type="java.lang.String" />
+			<property name="cusOperation" type="java.lang.Byte" />
+			<property name="isUrged" not-null="true" type="java.lang.Byte" />
+			<property name="arriveTime" type="java.sql.Time" />
+			<property name="discount" type="java.math.BigDecimal" />
+			<property name="discountTotal" type="java.math.BigDecimal" />
+		</class>
+</hibernate-mapping>

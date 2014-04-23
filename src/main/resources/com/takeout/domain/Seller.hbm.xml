@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<hibernate-mapping package="com.takeout.domain">
+		<class name="Seller" table="seller">
+			<id name="sellerId" type="java.lang.Long">
+				<generator class="identity" />
+			</id>
+			<property name="sellerName" not-null="true" type="java.lang.String" />
+			<property name="password" not-null="true" type="java.lang.String" />
+			<property name="regTime" not-null="true" type="java.sql.Timestamp" />
+			<property name="sellerHead" type="java.lang.String" />
+			<property name="sellerInfo" type="java.lang.String" />
+			<property name="shopId" type="java.lang.Long" />
+			<property name="shopName" type="java.lang.String" />
+		</class>
+</hibernate-mapping>
