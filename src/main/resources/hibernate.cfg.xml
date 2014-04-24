@@ -21,5 +21,12 @@
 	<property name="hibernate.hbm2ddl.auto">update</property>
 	<mapping resource="com/takeout/domain/Orders.hbm.xml" />
 	<mapping resource="com/takeout/domain/Orderitem.hbm.xml" />
+	<mapping resource="com/takeout/domain/Region.hbm.xml" />
+	<mapping resource="com/takeout/domain/Section.hbm.xml" />
+	<mapping resource="com/takeout/domain/Seller.hbm.xml" />
+	<mapping resource="com/takeout/domain/Shop.hbm.xml" />
+	<mapping resource="com/takeout/domain/Shopcomment.hbm.xml" />
+	<mapping resource="com/takeout/domain/Shopimg.hbm.xml" />
+	<mapping resource="com/takeout/domain/Street.hbm.xml" />
 </session-factory>
 </hibernate-configuration>

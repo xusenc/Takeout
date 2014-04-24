@@ -5,7 +5,7 @@
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 	<hibernate-mapping package="com.takeout.domain">
 		<class name="Street" table="street">
-			<id name="shopImgId" type="java.lang.Long">
+			<id name="streetId" type="java.lang.Long">
 				<generator class="identity" />
 			</id>
 			<property name="streetName" not-null="true" type="java.lang.String" />
@@ -13,7 +13,7 @@
 			<property name="regionName" type="java.lang.String" />
 			<property name="cityId" type="java.lang.Long" />
 			<property name="cityName" type="java.lang.String" />
-			<property name="zoomLevel" type="java.lang.Byte" />
+			<property name="zoomLevel" not-null="true" type="java.lang.Byte" />
 			<property name="latitude" not-null="true" type="java.math.BigDecimal" />
 			<property name="longitude" not-null="true" type="java.math.BigDecimal" />
 		</class>

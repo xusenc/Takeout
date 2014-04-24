@@ -22,7 +22,7 @@ public class Street {
 	/** city's name   */
 	private String cityName;
 	/** zoom's level  */
-	private int zoomLevel;
+	private byte zoomLevel;
 	/** latitue       */
 	private BigDecimal latitude;
 	/** longitude     */
@@ -115,14 +115,14 @@ public class Street {
 	/**
 	 * @return the zoomLevel
 	 */
-	public int getZoomLevel() {
+	public byte getZoomLevel() {
 		return zoomLevel;
 	}
 	
 	/**
 	 * @param zoomLevel the zoomLevel to set
 	 */
-	public void setZoomLevel(int zoomLevel) {
+	public void setZoomLevel(byte zoomLevel) {
 		this.zoomLevel = zoomLevel;
 	}
 	

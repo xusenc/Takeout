@@ -82,7 +82,7 @@ public class Shopcomment {
 	/**
 	 * @param shopReplay the shopReplay to set
 	 */
-	public void setShopReplay(String shopReply) {
+	public void setShopReply(String shopReply) {
 		this.shopReply = shopReply;
 	}
 }

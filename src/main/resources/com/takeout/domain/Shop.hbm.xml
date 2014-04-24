@@ -9,7 +9,8 @@
 				<generator class="identity" />
 			</id>
 			<property name="sellerId" not-null="true" type="java.lang.Long" />
-			<property name="sellerName" not-null="true" type="java.lang.String" />
+			<!-- <property name="sellerName" not-null="true" type="java.lang.String" /> -->
+			<property name="shopName" not-null="true" type="java.lang.String" />
 			<property name="mobile" not-null="true" type="java.lang.String" />
 			<property name="cityId" not-null="true" type="java.lang.Long" />
 			<property name="cityName" not-null="true" type="java.lang.String" />
