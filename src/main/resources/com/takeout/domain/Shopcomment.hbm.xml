@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<hibernate-mapping package="com.takeout.domain">
+		<class name="Shopcomment" table="shopcomment">
+			<id name="shopComId" type="java.lang.Long">
+				<generator class="identity" />
+			</id>
+			<property name="shopId" not-null="true" type="java.lang.Long" />
+			<property name="shopName" not-null="true" type="java.lang.String" />
+			<property name="commentText" not-null="true" type="java.lang.String" />
+			<property name="shopReply" not-null="true" type="java.lang.String" />
+		</class>
+</hibernate-mapping>
