@@ -31,7 +31,7 @@ public class Orders {
 	/** 	notes			*/
 	private String notes;
 	/**   customer operation */
-	private Byte cusOperation;
+	private byte cusOperation;
 	/**   is urged    */
 	private byte isUrged;
 	/**   arrive time */

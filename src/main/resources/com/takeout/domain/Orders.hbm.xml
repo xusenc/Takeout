@@ -12,7 +12,7 @@
 			<property name="shopId" not-null="true" type="java.lang.Long" />
 		   <property name="mobile" not-null="true" type="java.lang.String" />
 			<property name="address" type="java.lang.String" />
-			<property name="createTime" not-null="true" type="java.sql.Timestamp" />
+			<property name="createTime" type="java.sql.Timestamp" />
 			<property name="endTime" type="java.sql.Timestamp" />
 			<property name="total" type="java.math.BigDecimal" />
 			<property name="status" not-null="true" type="java.lang.Byte" />

@@ -1,23 +1,15 @@
 package com.takeout.domain;
-
 import static org.junit.Assert.*;
 
 import java.math.BigDecimal;
-
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.junit.*;
-/**
- * unit test for Orders Class
- * 
- * @author xusen
- *	@version 1.0
- */
-public class OrdersTest {
-	
+public class OrderitemTest {
+
 	private static SessionFactory sf = null;
 	static byte t;
 	@Before
@@ -27,7 +19,8 @@ public class OrdersTest {
 	
 	@After
 	public void tearDown() {
-		sf.close();
+		if(sf != null)
+			sf.close();
 	}
 	
 	@Test
@@ -35,22 +28,17 @@ public class OrdersTest {
 		Session session =  sf.openSession();
 		Transaction tx = session.beginTransaction();
 		
-		Orders orders = new Orders();
-		//orders.setOrderId(1);
-		orders.setCustomerId(1);
-		orders.setShopId(1);
-		orders.setMobile("12342343");
-		orders.setAddress("tianhe");
-		orders.setTotal(new BigDecimal(23.34));
-		//byte n = 1;
-		
-		//orders.setCreateTime(new Timestamp(new java.util.Date().getTime()));
-		//orders.setEndTime(new Timestamp(new java.util.Date().getTime()));
-		//orders.setCusOperation(n);
-		session.save(orders);
+		Orderitem item = new Orderitem();
+		item.setOrderId(1);
+		item.setDishId(1);
+		item.setDishName("mydish");
+		item.setPrice(new BigDecimal(23.22));
+		item.setCount(1);
+		item.setShopId(1);
+		item.setShopName("myshop");
+		session.save(item);
 		tx.commit();
-		assertNotEquals("test orders", 0, orders.getOrderId());
+		assertNotEquals("test orders", 0, item.getItemId());
 		session.close();
 	}
-	
 }

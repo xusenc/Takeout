@@ -5,13 +5,13 @@
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 	<hibernate-mapping package="com.takeout.domain">
 		<class name="Orderitem" table="orderitem">
-			<id name="itemid" type="java.lang.Long">
+			<id name="itemId" type="java.lang.Long">
 				<generator class="identity" />
 			</id>
 			<property name="orderId" not-null="true" type="java.lang.Long" />
 			<property name="dishId" not-null="true" type="java.lang.Long" />
 			<property name="dishName" not-null="true" type="java.lang.String" />
-			<property name="price" not-null="true" type="java.math.BigDecima" />
+			<property name="price" not-null="true" type="java.math.BigDecimal" />
 			<property name="count" not-null="true" type="java.lang.Integer" />
 			<property name="shopId" not-null="true" type="java.lang.Long" />
 			<property name="shopName" not-null="true" type="java.lang.String" />

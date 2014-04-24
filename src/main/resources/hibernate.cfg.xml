@@ -13,10 +13,13 @@
 	</property>
 	<property name="hibernate.connection.username">root</property>
 	<property name="hibernate.dialect">
-		org.hibernate.dialect.MySQLDialect
+		org.hibernate.dialect.MySQLInnoDBDialect
 	</property>
+<!-- 	<property name="hibernate.cache.use_second_level_cache">true</property>
+	<property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property> -->
 	<property name="hibernate.show_sql">yes</property>
 	<property name="hibernate.hbm2ddl.auto">update</property>
 	<mapping resource="com/takeout/domain/Orders.hbm.xml" />
+	<mapping resource="com/takeout/domain/Orderitem.hbm.xml" />
 </session-factory>
 </hibernate-configuration>
