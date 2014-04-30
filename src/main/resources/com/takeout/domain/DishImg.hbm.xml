@@ -2,14 +2,14 @@
 <!DOCTYPE hibernate-mapping PUBLIC
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<hibernate-mapping>
+<hibernate-mapping package="com.takeout.domain">
 	<class name="DishImg" table="dishimg">
-		<id name="dishImgId">
+		<id name="dishImgId" type="java.lang.Long">
 			<generator class="identity"/>
 		</id>
-		<property name="imgPath"/>
-		<property name="dishId"/>
-		<property name="width"/>    
-		<property name="height"/>
+		<property name="imgPath" type="java.lang.String"/>
+		<property name="dishId" type="java.lang.Long"/>
+		<property name="width" type="java.lang.Integer"/>    
+		<property name="height" type="java.lang.Integer"/>
 	</class>
 </hibernate-mapping>

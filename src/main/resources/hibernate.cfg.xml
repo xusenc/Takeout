@@ -7,7 +7,7 @@
 	<property name="hibernate.connection.driver_class">
 		com.mysql.jdbc.Driver
 	</property>
-	<property name="hibernate.connection.password">5domysql</property>
+	
 	<property name="hibernate.connection.url">
 		jdbc:mysql://localhost:3306/takeout
 	</property>
@@ -19,6 +19,13 @@
 	<property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property> -->
 	<property name="hibernate.show_sql">yes</property>
 	<property name="hibernate.hbm2ddl.auto">update</property>
+	<mapping resource="com/takeout/domain/Activity.hbm.xml" />
+	<mapping resource="com/takeout/domain/Announcement.hbm.xml" />
+	<mapping resource="com/takeout/domain/City.hbm.xml" />
+	<mapping resource="com/takeout/domain/Customer.hbm.xml" />
+	<mapping resource="com/takeout/domain/Dish.hbm.xml" />
+	<mapping resource="com/takeout/domain/DishComment.hbm.xml" />
+	<mapping resource="com/takeout/domain/DishImg.hbm.xml" />
 	<mapping resource="com/takeout/domain/Orders.hbm.xml" />
 	<mapping resource="com/takeout/domain/Orderitem.hbm.xml" />
 	<mapping resource="com/takeout/domain/Region.hbm.xml" />
@@ -28,5 +35,6 @@
 	<mapping resource="com/takeout/domain/Shopcomment.hbm.xml" />
 	<mapping resource="com/takeout/domain/Shopimg.hbm.xml" />
 	<mapping resource="com/takeout/domain/Street.hbm.xml" />
+	
 </session-factory>
 </hibernate-configuration>

@@ -24,39 +24,39 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
  */
 @RunWith(JMock.class)
 public class SectionDaoImplTest {
-	
+
 	private final Mockery context = new Mockery(){{
 		setImposteriser(ClassImposteriser.INSTANCE);
 	}};
 	private  final HibernateTemplate mockHibernateTemplate =
 			context.mock(HibernateTemplate.class);
-	
+
 	private SectionDao itemDao = null;
-	
+
 	@Before
 	public void setUp() {
 		SectionDaoImpl ordersDaoImpl = new SectionDaoImpl();
 		ordersDaoImpl.setHibernateTemplate(mockHibernateTemplate);
 		itemDao = ordersDaoImpl;
 	}
-	
+
 	@Test
 	public void testget1() {
 		final Section orders = new Section();
-		
+
 		context.checking(new Expectations() {
 			{
 				oneOf(mockHibernateTemplate).get(Section.class, 1);
 				will(returnValue(orders));
 			}
 		});
-		
+
 		Section actual = itemDao.get(1);
 		context.assertIsSatisfied();
 		assertEquals("test get1() method: ",
 				actual, orders);
 	}
-	
+
 	@Test
 	public void testget2() {
 		context.checking(new Expectations() {
@@ -65,40 +65,40 @@ public class SectionDaoImplTest {
 				will(returnValue(null));
 			}
 		});
-		
+
 		Section actual = itemDao.get(1);
 		context.assertIsSatisfied();
 		assertNull("test get2() method: ",
 				actual);
 	}
-	
+
 	@Test
 	public void testsave1() {
 		final Section orders = new Section();
 		//orders.setSectionId(1);
-		
+
 		context.checking(new Expectations() {
 			{
 				oneOf(mockHibernateTemplate).save(orders);
 				will(returnValue(2));
 			}
 		});
-		
+
 		int id = itemDao.save(orders);
-		
+
 		context.assertIsSatisfied();
-		
+
 		assertEquals("test save1() method: ",
 				2, id);
 	}
-	
+
 	@Test
 	public void testUpdate() {
 		final Section order1 = new Section();
 		order1.setSectionId(3);
 		//1.setBookname("book1");
 		order1.setSectionName("sdfsdf");
-		
+
 		final Section order2 = order1;
 		//book2.setBookname("book2");
 		//order2.setCount(31);
@@ -128,7 +128,7 @@ public class SectionDaoImplTest {
 		assertEquals("test update(Book book) method: ",
 			order2, book3);
 	}
-	
+
 	@Test
 	public void testDelete() {
 		final Section book1 = new Section();
@@ -156,7 +156,7 @@ public class SectionDaoImplTest {
 
 		//assertNull("test delete(Book book) method: ", )
 	}
-	
+
 	@Test
 	public void testFindAll() {
 		final List<Section> orders = new ArrayList<Section>();
@@ -169,20 +169,20 @@ public class SectionDaoImplTest {
 		orders.add(order1);
 		orders.add(order2);
 		orders.add(order3);
-		
+
 		context.checking(new Expectations() {
 			{
 				oneOf(mockHibernateTemplate).find("from Section");
 				will(returnValue(orders));
 			}
 		});
-		
+
 		List<Section> orderss = itemDao.findAll();
 		assertEquals("test findAll() method: ",
 				orders, orderss);
-		
+
 		context.assertIsSatisfied();
-		
+
 	}
 
 }

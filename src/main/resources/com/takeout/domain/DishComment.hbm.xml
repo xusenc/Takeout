@@ -2,17 +2,18 @@
 <!DOCTYPE hibernate-mapping PUBLIC
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<hibernate-mapping>
+<hibernate-mapping package="com.takeout.domain">
 	<class name="DishComment" table="dishcomment">
-		<id name="disComId">
+		<id name="disComId" type="java.lang.Long">
 			<generator class="identity"/>
 		</id>
-		<property name="commentText"/>
-		<property name="dishId"/>
-		<property name="shopId"/>    
-		<property name="customId"/>
-		<property name="commentTime"/>
-		<property name="shopReply"/> 
+		<property name="commentText" type="java.lang.String"/>
+		<property name="dishId" type="java.lang.Long"/>
+		<property name="shopId" type="java.lang.Long"/>    
+		<property name="customerId" type="java.lang.Long"/>
+		<property name="customId" type="java.lang.Long"/>
+		<property name="commentTime" type="java.sql.Timestamp"/>
+		<property name="shopReply" type="java.lang.String"/> 
 
 	</class>
 </hibernate-mapping>

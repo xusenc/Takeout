@@ -1,44 +1,27 @@
 package com.takeout.domain;
 
+import java.math.BigDecimal;
+import java.sql.Timestamp;
+
 public class Dish {
-	private int dishId;
+	private long dishId;
 	private String dishName;
-	private int sectionId;
+	private long sectionId;
 	private String sectionName;
-	private int shopId;
+	private long shopId;
 	private String shopName;
 	private String annotation;
-	private double price;
-	private double discountPrice;
+	private BigDecimal price;
+	private BigDecimal discountPrice;
 	private int acceptOrder;
-	private String lastUpdate;
+	private Timestamp lastUpdate;
 	private int isDiscount;
 	private int numClick;
 	private int numPraise;
-	public Dish(int dishId, String dishName, int sectionId, String sectionName,
-			int shopId, String shopName, String annotation, double price,
-			double discountPrice, int acceptOrder, String lastUpdate,
-			int isDiscount, int numClick, int numPraise) {
-		super();
-		this.dishId = dishId;
-		this.dishName = dishName;
-		this.sectionId = sectionId;
-		this.sectionName = sectionName;
-		this.shopId = shopId;
-		this.shopName = shopName;
-		this.annotation = annotation;
-		this.price = price;
-		this.discountPrice = discountPrice;
-		this.acceptOrder = acceptOrder;
-		this.lastUpdate = lastUpdate;
-		this.isDiscount = isDiscount;
-		this.numClick = numClick;
-		this.numPraise = numPraise;
-	}
-	public int getDishId() {
+	public long getDishId() {
 		return dishId;
 	}
-	public void setDishId(int dishId) {
+	public void setDishId(long dishId) {
 		this.dishId = dishId;
 	}
 	public String getDishName() {
@@ -47,10 +30,10 @@ public class Dish {
 	public void setDishName(String dishName) {
 		this.dishName = dishName;
 	}
-	public int getSectionId() {
+	public long getSectionId() {
 		return sectionId;
 	}
-	public void setSectionId(int sectionId) {
+	public void setSectionId(long sectionId) {
 		this.sectionId = sectionId;
 	}
 	public String getSectionName() {
@@ -59,10 +42,10 @@ public class Dish {
 	public void setSectionName(String sectionName) {
 		this.sectionName = sectionName;
 	}
-	public int getShopId() {
+	public long getShopId() {
 		return shopId;
 	}
-	public void setShopId(int shopId) {
+	public void setShopId(long shopId) {
 		this.shopId = shopId;
 	}
 	public String getShopName() {
@@ -77,16 +60,16 @@ public class Dish {
 	public void setAnnotation(String annotation) {
 		this.annotation = annotation;
 	}
-	public double getPrice() {
+	public BigDecimal getPrice() {
 		return price;
 	}
-	public void setPrice(double price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
-	public double getDiscountPrice() {
+	public BigDecimal getDiscountPrice() {
 		return discountPrice;
 	}
-	public void setDiscountPrice(double discountPrice) {
+	public void setDiscountPrice(BigDecimal discountPrice) {
 		this.discountPrice = discountPrice;
 	}
 	public int getAcceptOrder() {
@@ -95,10 +78,10 @@ public class Dish {
 	public void setAcceptOrder(int acceptOrder) {
 		this.acceptOrder = acceptOrder;
 	}
-	public String getLastUpdate() {
+	public Timestamp getLastUpdate() {
 		return lastUpdate;
 	}
-	public void setLastUpdate(String lastUpdate) {
+	public void setLastUpdate(Timestamp lastUpdate) {
 		this.lastUpdate = lastUpdate;
 	}
 	public int getIsDiscount() {
@@ -119,5 +102,6 @@ public class Dish {
 	public void setNumPraise(int numPraise) {
 		this.numPraise = numPraise;
 	}
+	
 	
 }

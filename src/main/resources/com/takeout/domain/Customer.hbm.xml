@@ -3,26 +3,26 @@
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping>
+<hibernate-mapping package="com.takeout.domain">
 	<class name="Customer" table="customer">
-		<id name="customerId">
+		<id name="customerId" type="java.lang.Long">
 			<generator class="identity"/>
 		</id>
-		<property name="email"/>
-		<property name="mobile"/>
-		<property name="userName"/>
-		<property name="password"/>
-		<property name="headUrl"/>
-		<property name="score"/>
-		<property name="regTime"/>
-		<property name="lastClient"/>
-		<property name="lastCityId"/>
-		<property name="lastCity"/>
-		<property name="lastTime"/>
-		<property name="emailVerified"/>    
-		<property name="mobileVerified"/>
-		<property name="mobileVerifing"/>
-		<property name="otherPlatform"/>
+		<property name="email" type="java.lang.String"/>
+		<property name="mobile" type="java.lang.String"/>
+		<property name="userName" type="java.lang.String"/>
+		<property name="password" type="java.lang.String"/>
+		<property name="headUrl" type="java.lang.String"/>
+		<property name="score" type="java.lang.Long"/>
+		<property name="regTime" type="java.sql.Timestamp"/>
+		<property name="lastClient" type="java.lang.Integer"/>
+		<property name="lastCityId" type="java.lang.Long"/>
+		<property name="lastCity" type="java.lang.String"/>
+		<property name="lastTime" type="java.sql.Timestamp"/>
+		<property name="emailVerified" type="java.lang.Integer"/>    
+		<property name="mobileVerified" type="java.lang.Integer"/>
+		<property name="mobileVerifing" type="java.lang.Integer"/>
+		<property name="otherPlatform" type="java.lang.String"/>
 		
 	</class>
 </hibernate-mapping>

@@ -31,39 +31,39 @@ import org.hibernate.Session;
  */
 @RunWith(JMock.class)
 public class OrdersDaoImplTest {
-	
+
 	private final Mockery context = new Mockery(){{
 		setImposteriser(ClassImposteriser.INSTANCE);
 	}};
 	private  final HibernateTemplate mockHibernateTemplate =
 			context.mock(HibernateTemplate.class);
-	
+
 	private OrdersDao ordersDao = null;
-	
+
 	@Before
 	public void setUp() {
 		OrdersDaoImpl ordersDaoImpl = new OrdersDaoImpl();
 		ordersDaoImpl.setHibernateTemplate(mockHibernateTemplate);
 		ordersDao = ordersDaoImpl;
 	}
-	
+
 	@Test
 	public void testget1() {
 		final Orders orders = new Orders();
-		
+
 		context.checking(new Expectations() {
 			{
 				oneOf(mockHibernateTemplate).get(Orders.class, 1);
 				will(returnValue(orders));
 			}
 		});
-		
+
 		Orders actual = ordersDao.get(1);
 		context.assertIsSatisfied();
 		assertEquals("test get1() method: ",
 				actual, orders);
 	}
-	
+
 	@Test
 	public void testget2() {
 		context.checking(new Expectations() {
@@ -72,33 +72,33 @@ public class OrdersDaoImplTest {
 				will(returnValue(null));
 			}
 		});
-		
+
 		Orders actual = ordersDao.get(1);
 		context.assertIsSatisfied();
 		assertNull("test get2() method: ",
 				actual);
 	}
-	
+
 	@Test
 	public void testsave1() {
 		final Orders orders = new Orders();
 		orders.setOrderId(2);
-		
+
 		context.checking(new Expectations() {
 			{
 				oneOf(mockHibernateTemplate).save(orders);
 				will(returnValue(2));
 			}
 		});
-		
+
 		int id = ordersDao.save(orders);
-		
+
 		context.assertIsSatisfied();
-		
+
 		assertEquals("test save1() method: ",
 				2, id);
 	}
-	
+
 	@Test
 	public void testUpdate() {
 		final Orders order1 = new Orders();
@@ -132,7 +132,7 @@ public class OrdersDaoImplTest {
 		assertEquals("test update(Book book) method: ",
 			order2, book3);
 	}
-	
+
 	@Test
 	public void testDelete() {
 		final Orders book1 = new Orders();
@@ -160,7 +160,7 @@ public class OrdersDaoImplTest {
 
 		//assertNull("test delete(Book book) method: ", )
 	}
-	
+
 	@Test
 	public void testFindAll() {
 		final List<Orders> orders = new ArrayList<Orders>();
@@ -173,23 +173,23 @@ public class OrdersDaoImplTest {
 		orders.add(order1);
 		orders.add(order2);
 		orders.add(order3);
-		
+
 		context.checking(new Expectations() {
 			{
 				oneOf(mockHibernateTemplate).find("from Orders");
 				will(returnValue(orders));
 			}
 		});
-		
+
 		List<Orders> orderss = ordersDao.findAll();
 		assertEquals("test findAll() method: ",
 				orders, orderss);
-		
+
 		context.assertIsSatisfied();
-		
+
 	}
-	
-	
-	
-	
+
+
+
+
 }

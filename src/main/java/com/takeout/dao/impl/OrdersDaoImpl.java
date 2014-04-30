@@ -1,17 +1,17 @@
 package com.takeout.dao.impl;
+
 import java.util.List;
 
-import com.takeout.dao.OrdersDao;
-import com.takeout.domain.Orders;
-import com.takeout.util.MyHibernateDaoSupport;
+import com.takeout.dao.*;
+import com.takeout.domain.*;
+import com.takeout.util.*;
 /**
  *  Implementation Class for OrdersDao
  *  
  *  @author xusen
  *  @version 1.0
  */
-public class OrdersDaoImpl 
-extends MyHibernateDaoSupport implements OrdersDao {
+public class OrdersDaoImpl  extends MyHibernateDaoSupport implements OrdersDao {
 	
 	/**
 	 * get Orders by identity

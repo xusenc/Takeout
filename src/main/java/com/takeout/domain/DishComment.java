@@ -1,78 +1,63 @@
 package com.takeout.domain;
 
-public class DishComment {
-	private int disComId;
-	private String commentText;
-	private int dishId;
-	private int shopId;
-	private int customId;
-	private String commentTime;
-	private String shopReply;
-	
-	public DishComment(int disComId, String commentText, int dishId,
-			int shopId, int customId, String commentTime, String shopReply) {
-		super();
-		this.disComId = disComId;
-		this.commentText = commentText;
-		this.dishId = dishId;
-		this.shopId = shopId;
-		this.customId = customId;
-		this.commentTime = commentTime;
-		this.shopReply = shopReply;
-	}
+import java.sql.Timestamp;
 
-	public int getDisComId() {
+public class DishComment {
+	private long disComId;
+	private String commentText;
+	private long dishId;
+	private long shopId;
+	private long customId;
+	private Timestamp commentTime;
+	private String shopReply;
+	private long customerId;
+
+	public long getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(long customerId) {
+		this.customerId = customerId;
+	}
+	public long getDisComId() {
 		return disComId;
 	}
-
-	public void setDisComId(int disComId) {
+	public void setDisComId(long disComId) {
 		this.disComId = disComId;
 	}
-
 	public String getCommentText() {
 		return commentText;
 	}
-
 	public void setCommentText(String commentText) {
 		this.commentText = commentText;
 	}
-
-	public int getDishId() {
+	public long getDishId() {
 		return dishId;
 	}
-
-	public void setDishId(int dishId) {
+	public void setDishId(long dishId) {
 		this.dishId = dishId;
 	}
-
-	public int getShopId() {
+	public long getShopId() {
 		return shopId;
 	}
-
-	public void setShopId(int shopId) {
+	public void setShopId(long shopId) {
 		this.shopId = shopId;
 	}
-
-	public int getCustomId() {
+	public long getCustomId() {
 		return customId;
 	}
-
-	public void setCustomId(int customId) {
+	public void setCustomId(long customId) {
 		this.customId = customId;
 	}
-
-	public String getCommentTime() {
+	
+	public Timestamp getCommentTime() {
 		return commentTime;
 	}
-
-	public void setCommentTime(String commentTime) {
+	public void setCommentTime(Timestamp commentTime) {
 		this.commentTime = commentTime;
 	}
-
 	public String getShopReply() {
 		return shopReply;
 	}
-
 	public void setShopReply(String shopReply) {
 		this.shopReply = shopReply;
 	}

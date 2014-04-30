@@ -1,25 +1,17 @@
 package com.takeout.domain;
 
 public class Activity {
-	private int activityId;
+	private long activityId;
 	private String activityName;
-	private String comment;
-	private int shopId;
+	private String comtent;
+	private long shopId;
 	
-	public Activity(int activityId, String activityName, String comment,
-			int shopId) {
-		super();
-		this.activityId = activityId;
-		this.activityName = activityName;
-		this.comment = comment;
-		this.shopId = shopId;
-	}
 
-	public int getActivityId() {
+	public long getActivityId() {
 		return activityId;
 	}
 
-	public void setActivityId(int activityId) {
+	public void setActivityId(long activityId) {
 		this.activityId = activityId;
 	}
 
@@ -31,19 +23,20 @@ public class Activity {
 		this.activityName = activityName;
 	}
 
-	public String getComment() {
-		return comment;
+
+	public String getComtent() {
+		return comtent;
 	}
 
-	public void setComment(String comment) {
-		this.comment = comment;
+	public void setComtent(String comtent) {
+		this.comtent = comtent;
 	}
 
-	public int getShopId() {
+	public long getShopId() {
 		return shopId;
 	}
 
-	public void setShopId(int shopId) {
+	public void setShopId(long shopId) {
 		this.shopId = shopId;
 	}
 	

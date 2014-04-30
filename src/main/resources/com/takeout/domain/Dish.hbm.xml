@@ -2,22 +2,23 @@
 <!DOCTYPE hibernate-mapping PUBLIC
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<hibernate-mapping>
+<hibernate-mapping package="com.takeout.domain">
 	<class name="Dish" table="dish">
-		<id name="dishId">
+		<id name="dishId" type="java.lang.Long">
 			<generator class="identity"/>
 		</id>
-		<property name="dishName"/>
-		<property name="sectionId"/>
-		<property name="sectionName"/>    
-		<property name="shopId"/>
-		<property name="shopName"/>
-		<property name="annotation"/> 
-		<property name="price"/>
-		<property name="discountPrice"/>
-		<property name="acceptOrder"/> 
-		<property name="isDiscount"/>
-		<property name="numClick"/>
-		<property name="numPraise"/> 
+		<property name="dishName" type="java.lang.String"/>
+		<property name="sectionId" type="java.lang.Long"/>
+		<property name="sectionName" type="java.lang.String"/>    
+		<property name="shopId" type="java.lang.Long"/>
+		<property name="shopName" type="java.lang.String"/>
+		<property name="annotation" type="java.lang.String"/> 
+		<property name="price" type="java.math.BigDecimal"/>
+		<property name="discountPrice" type="java.math.BigDecimal"/>
+		<property name="acceptOrder" type="java.lang.Integer"/> 
+		<property name="isDiscount" type="java.lang.Integer"/>
+		<property name="numClick" type="java.lang.Integer"/>
+		<property name="numPraise" type="java.lang.Integer"/> 
+		<property name="lastUpdate" type="java.sql.Timestamp"/>
 	</class>
 </hibernate-mapping>

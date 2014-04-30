@@ -25,39 +25,39 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
  */
 @RunWith(JMock.class)
 public class RegionDaoImplTest {
-	
+
 	private final Mockery context = new Mockery(){{
 		setImposteriser(ClassImposteriser.INSTANCE);
 	}};
 	private  final HibernateTemplate mockHibernateTemplate =
 			context.mock(HibernateTemplate.class);
-	
+
 	private RegionDao ordersDao = null;
-	
+
 	@Before
 	public void setUp() {
 		RegionDaoImpl ordersDaoImpl = new RegionDaoImpl();
 		ordersDaoImpl.setHibernateTemplate(mockHibernateTemplate);
 		ordersDao = ordersDaoImpl;
 	}
-	
+
 	@Test
 	public void testget1() {
 		final Region orders = new Region();
-		
+
 		context.checking(new Expectations() {
 			{
 				oneOf(mockHibernateTemplate).get(Region.class, 1);
 				will(returnValue(orders));
 			}
 		});
-		
+
 		Region actual = ordersDao.get(1);
 		context.assertIsSatisfied();
 		assertEquals("test get1() method: ",
 				actual, orders);
 	}
-	
+
 	@Test
 	public void testget2() {
 		context.checking(new Expectations() {
@@ -66,33 +66,33 @@ public class RegionDaoImplTest {
 				will(returnValue(null));
 			}
 		});
-		
+
 		Region actual = ordersDao.get(1);
 		context.assertIsSatisfied();
 		assertNull("test get2() method: ",
 				actual);
 	}
-	
+
 	@Test
 	public void testsave1() {
 		final Region orders = new Region();
 		orders.setRegionId(2);
-		
+
 		context.checking(new Expectations() {
 			{
 				oneOf(mockHibernateTemplate).save(orders);
 				will(returnValue(2));
 			}
 		});
-		
+
 		int id = ordersDao.save(orders);
-		
+
 		context.assertIsSatisfied();
-		
+
 		assertEquals("test save1() method: ",
 				2, id);
 	}
-	
+
 	@Test
 	public void testUpdate() {
 		final Region order1 = new Region();
@@ -127,7 +127,7 @@ public class RegionDaoImplTest {
 		assertEquals("test update(Book book) method: ",
 			order2, book3);
 	}
-	
+
 	@Test
 	public void testDelete() {
 		final Region book1 = new Region();
@@ -155,7 +155,7 @@ public class RegionDaoImplTest {
 
 		//assertNull("test delete(Book book) method: ", )
 	}
-	
+
 	@Test
 	public void testFindAll() {
 		final List<Region> orders = new ArrayList<Region>();
@@ -168,19 +168,19 @@ public class RegionDaoImplTest {
 		orders.add(order1);
 		orders.add(order2);
 		orders.add(order3);
-		
+
 		context.checking(new Expectations() {
 			{
 				oneOf(mockHibernateTemplate).find("from Region");
 				will(returnValue(orders));
 			}
 		});
-		
+
 		List<Region> orderss = ordersDao.findAll();
 		assertEquals("test findAll() method: ",
 				orders, orderss);
-		
+
 		context.assertIsSatisfied();
-		
+
 	}
 }

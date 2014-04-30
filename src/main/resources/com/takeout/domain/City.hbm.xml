@@ -3,14 +3,14 @@
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 	
-<hibernate-mapping>
+<hibernate-mapping package="com.takeout.domain">
 	<class name="City" table="city">
-		<id name="cityId">
+		<id name="cityId" type="java.lang.Long">
 			<generator class="identity"/>
 		</id>
-		<property name="cityName"/>
-		<property name="latitude"/>
-		<property name="longtitude"/>
-		<property name="zoomLevel"/>     
+		<property name="cityName" type="java.lang.String"/>
+		<property name="latitude" type="java.math.BigDecimal"/>
+		<property name="longtitude" type="java.math.BigDecimal"/>
+		<property name="zoomLevel" type="java.lang.Integer"/>     
 	</class>
 </hibernate-mapping>

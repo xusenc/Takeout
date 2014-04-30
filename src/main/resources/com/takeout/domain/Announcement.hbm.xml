@@ -4,12 +4,12 @@
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="com.takeout.domain">
-	<class name="Activity" table="activity">
-		<id name="activityId" type="java.lang.Long">
+	<class name="Announcement" table="announcement">
+		<id name="annouceId" type="java.lang.Long">
 			<generator class="identity"/>
 		</id>
-		<property name="activityName" type="java.lang.String"/>
-		<property name="comtent" type="java.lang.String"/>
-		<property name="shopId" type="java.lang.Long"/>    
+		<property name="content" type="java.lang.String"/>
+		<property name="shopId" type="java.lang.Long"/>
+		<property name="image" type="java.lang.String"/>    
 	</class>
 </hibernate-mapping>

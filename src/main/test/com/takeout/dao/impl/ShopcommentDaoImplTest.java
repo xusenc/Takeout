@@ -24,39 +24,39 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
  */
 @RunWith(JMock.class)
 public class ShopcommentDaoImplTest {
-	
+
 	private final Mockery context = new Mockery(){{
 		setImposteriser(ClassImposteriser.INSTANCE);
 	}};
 	private  final HibernateTemplate mockHibernateTemplate =
 			context.mock(HibernateTemplate.class);
-	
+
 	private ShopcommentDao itemDao = null;
-	
+
 	@Before
 	public void setUp() {
 		ShopcommentDaoImpl ordersDaoImpl = new ShopcommentDaoImpl();
 		ordersDaoImpl.setHibernateTemplate(mockHibernateTemplate);
 		itemDao = ordersDaoImpl;
 	}
-	
+
 	@Test
 	public void testget1() {
 		final Shopcomment orders = new Shopcomment();
-		
+
 		context.checking(new Expectations() {
 			{
 				oneOf(mockHibernateTemplate).get(Shopcomment.class, 1);
 				will(returnValue(orders));
 			}
 		});
-		
+
 		Shopcomment actual = itemDao.get(1);
 		context.assertIsSatisfied();
 		assertEquals("test get1() method: ",
 				actual, orders);
 	}
-	
+
 	@Test
 	public void testget2() {
 		context.checking(new Expectations() {
@@ -65,33 +65,33 @@ public class ShopcommentDaoImplTest {
 				will(returnValue(null));
 			}
 		});
-		
+
 		Shopcomment actual = itemDao.get(1);
 		context.assertIsSatisfied();
 		assertNull("test get2() method: ",
 				actual);
 	}
-	
+
 	@Test
 	public void testsave1() {
 		final Shopcomment orders = new Shopcomment();
 		//orders.setShopComId(1);
-		
+
 		context.checking(new Expectations() {
 			{
 				oneOf(mockHibernateTemplate).save(orders);
 				will(returnValue(2));
 			}
 		});
-		
+
 		int id = itemDao.save(orders);
-		
+
 		context.assertIsSatisfied();
-		
+
 		assertEquals("test save1() method: ",
 				2, id);
 	}
-	
+
 	@Test
 	public void testUpdate() {
 		final Shopcomment order1 = new Shopcomment();
@@ -99,7 +99,7 @@ public class ShopcommentDaoImplTest {
 		order1.setShopComId(3);
 		//1.setBookname("book1");
 		order1.setShopName("sdfsdf");
-		
+
 		final Shopcomment order2 = order1;
 		//book2.setBookname("book2");
 		//order2.setCount(31);
@@ -129,7 +129,7 @@ public class ShopcommentDaoImplTest {
 		assertEquals("test update(Book book) method: ",
 			order2, book3);
 	}
-	
+
 	@Test
 	public void testDelete() {
 		final Shopcomment book1 = new Shopcomment();
@@ -157,7 +157,7 @@ public class ShopcommentDaoImplTest {
 
 		//assertNull("test delete(Book book) method: ", )
 	}
-	
+
 	@Test
 	public void testFindAll() {
 		final List<Shopcomment> orders = new ArrayList<Shopcomment>();
@@ -170,20 +170,20 @@ public class ShopcommentDaoImplTest {
 		orders.add(order1);
 		orders.add(order2);
 		orders.add(order3);
-		
+
 		context.checking(new Expectations() {
 			{
 				oneOf(mockHibernateTemplate).find("from Shopcomment");
 				will(returnValue(orders));
 			}
 		});
-		
+
 		List<Shopcomment> orderss = itemDao.findAll();
 		assertEquals("test findAll() method: ",
 				orders, orderss);
-		
+
 		context.assertIsSatisfied();
-		
+
 	}
 
 }
