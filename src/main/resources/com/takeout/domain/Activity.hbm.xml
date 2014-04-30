@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="Activity" table="activity">
+		<id name="activityId">
+			<generator class="identity"/>
+		</id>
+		<property name="activityName"/>
+		<property name="comment"/>
+		<property name="shopId"/>    
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="DishImg" table="dishimg">
+		<id name="dishImgId">
+			<generator class="identity"/>
+		</id>
+		<property name="imgPath"/>
+		<property name="dishId"/>
+		<property name="width"/>    
+		<property name="height"/>
+	</class>
+</hibernate-mapping>

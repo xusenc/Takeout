@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="Dish" table="dish">
+		<id name="dishId">
+			<generator class="identity"/>
+		</id>
+		<property name="dishName"/>
+		<property name="sectionId"/>
+		<property name="sectionName"/>    
+		<property name="shopId"/>
+		<property name="shopName"/>
+		<property name="annotation"/> 
+		<property name="price"/>
+		<property name="discountPrice"/>
+		<property name="acceptOrder"/> 
+		<property name="isDiscount"/>
+		<property name="numClick"/>
+		<property name="numPraise"/> 
+	</class>
+</hibernate-mapping>

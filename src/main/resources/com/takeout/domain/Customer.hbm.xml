@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="Customer" table="customer">
+		<id name="customerId">
+			<generator class="identity"/>
+		</id>
+		<property name="email"/>
+		<property name="mobile"/>
+		<property name="userName"/>
+		<property name="password"/>
+		<property name="headUrl"/>
+		<property name="score"/>
+		<property name="regTime"/>
+		<property name="lastClient"/>
+		<property name="lastCityId"/>
+		<property name="lastCity"/>
+		<property name="lastTime"/>
+		<property name="emailVerified"/>    
+		<property name="mobileVerified"/>
+		<property name="mobileVerifing"/>
+		<property name="otherPlatform"/>
+		
+	</class>
+</hibernate-mapping>

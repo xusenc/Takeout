@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="DishComment" table="dishcomment">
+		<id name="disComId">
+			<generator class="identity"/>
+		</id>
+		<property name="commentText"/>
+		<property name="dishId"/>
+		<property name="shopId"/>    
+		<property name="customId"/>
+		<property name="commentTime"/>
+		<property name="shopReply"/> 
+
+	</class>
+</hibernate-mapping>
